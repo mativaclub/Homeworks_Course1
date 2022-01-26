@@ -22,7 +22,7 @@ public class main {
             if (i == arr4.length - 1) {
                 System.out.print(arr4[i]);
             } else {
-                System.out.print(arr4[i] + ",");
+                System.out.print(arr4[i] + ", ");
             }
         }
         System.out.println();
@@ -31,7 +31,7 @@ public class main {
             if (i == arr5.length - 1) {
                 System.out.print(arr5[i]);
             } else {
-                System.out.print(arr5[i] + ",");
+                System.out.print(arr5[i] + ", ");
             }
         }
         System.out.println();
@@ -40,9 +40,10 @@ public class main {
             if (i == arr6.length - 1) {
                 System.out.print(arr6[i]);
             } else {
-                System.out.print(arr6[i] + ",");
+                System.out.print(arr6[i] + ", ");
             }
         }
+        System.out.println();
         System.out.println();
 
         System.out.println("задача 3");
@@ -51,7 +52,7 @@ public class main {
             if (i == 0) {
                 System.out.print(arr4Rev[i]);
             } else if (i < arr4Rev.length)  {
-                System.out.print(arr4Rev[i] + ",");
+                System.out.print(arr4Rev[i] + ", ");
             }
         }
         System.out.println();
@@ -60,7 +61,7 @@ public class main {
             if (i == 0) {
                 System.out.print(arr5Rev[i]);
             } else if (i < arr5Rev.length) {
-                System.out.print(arr5Rev[i] + ",");
+                System.out.print(arr5Rev[i] + ", ");
             }
         }
         System.out.println();
@@ -69,10 +70,11 @@ public class main {
             if (i == 0) {
                 System.out.print(arr6Rev[i]);
             } else if (i < arr6Rev.length) {
-                System.out.print(arr6Rev[i] + ",");
+                System.out.print(arr6Rev[i] + ", ");
             }
         }
 
+        System.out.println();
         System.out.println();
 
         System.out.println("задача 4");
@@ -84,6 +86,7 @@ public class main {
                 System.out.print(arr4even[i] + " ");
             }
         }
+        System.out.println();
         System.out.println();
 
         System.out.println("задача 2.1");
@@ -168,31 +171,32 @@ public class main {
         System.out.println();
 
         System.out.println("задача 2.6");
-//        int[] array = {5, 4, 3, 2, 1};
-//        for (int i = 0; i < array.length; i++) {
-//            for (int j = 0; j < array.length; j++) {
-       // int[] array1 = {5, 4, 3, 2, 1};
-        //        Arrays.sort(array1);
-        //        int firstNum = 0;
-        //        int lastNum = array1.length-1;
-        //        while (firstNum < lastNum) {
-        //            firstNum = lastNum;
-        //            lastNum = firstNum;
-        //        }
-        //            System.out.println(Arrays.toString(array1));
-//        }
+        int[] array2 = {5, 4, 3, 2, 1};
+        int[] buffer = new int[array2.length];
+        for (int i = 0; i < array2.length; i++) {
+            buffer[i] = array2[array2.length - 1 - i];
+        }
+        System.out.println(Arrays.toString(array2));
+        System.out.println(Arrays.toString(buffer));
 
         System.out.println();
 
         System.out.println("задача 2.7");
-        //Решите предыдущее задание, но без использования дополнительного массива.
-        //Необходимо добиться того, чтобы исходный массив полностью соответствовал
-        // второму массиву из прошлого задания.
+        int[] array3 = {5, 4, 3, 2, 1};
+        System.out.println(Arrays.toString(array2));
+        int leftIndex1 = 0;
+        int rightIndex1 = array3.length-1;
+        int tmp = array3[leftIndex1];
+        array3[leftIndex1++] = array3[rightIndex1];
+        array3[rightIndex1--] = tmp;
+        System.out.println(Arrays.toString(array3));
 
+        System.out.println();
         System.out.println();
 
         System.out.println("задача 2.8");
         int[] arr = {-6, 2, 5, -8, 8, 10, 4, -7, 12, 1};
+        int numberToFind1 = -2;
         for (int i = 0; i < arr.length; i++) {
             for (int j = i + 1; j < arr.length; j++) {
                 int firstNumber = arr[i];
@@ -200,6 +204,22 @@ public class main {
                 if (firstNumber + secondNumber == -2) {
                     System.out.println("Found " + firstNumber + " and " + secondNumber);
                 }
+            }
+        }
+        System.out.println("задача 2.8.1");
+        Arrays.sort(arr);
+        System.out.println(Arrays.toString(arr));
+        int leftIndex = 0;
+        int rightIndex = arr.length-1;
+        while (leftIndex < rightIndex) {
+            int sum2 = arr[leftIndex] + arr[rightIndex];
+            if (sum2 == numberToFind1) {
+                System.out.println("Found " + arr[leftIndex] + " " + arr[rightIndex]);
+                break;
+            } else if (sum2 > numberToFind1) {
+                rightIndex--;
+            } else {
+                leftIndex++;
             }
         }
 
@@ -224,16 +244,13 @@ public class main {
 
 
 
-}
 
 
 
 
 
 
-
-
-
+    }
 
 
         public static int[] generateRandomArray() {
