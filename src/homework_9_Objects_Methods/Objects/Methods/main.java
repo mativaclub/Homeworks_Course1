@@ -2,6 +2,8 @@ package homework_9_Objects_Methods.Objects.Methods;
 
 public class main {
 
+
+
     public static void main(String[] args) {
 
         Book book1 = new Book("Иди туда где страшно",

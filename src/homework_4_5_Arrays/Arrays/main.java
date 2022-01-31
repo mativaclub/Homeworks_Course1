@@ -186,11 +186,14 @@ public class main {
         System.out.println(Arrays.toString(array2));
         int leftIndex1 = 0;
         int rightIndex1 = array3.length-1;
-        int tmp = array3[leftIndex1];
-        array3[leftIndex1++] = array3[rightIndex1];
-        array3[rightIndex1--] = tmp;
+        while (leftIndex1 < rightIndex1) {
+            int tmp = array3[leftIndex1];
+            array3[leftIndex1] = array3[rightIndex1];
+            array3[rightIndex1] = tmp;
+            leftIndex1++;
+            rightIndex1--;
+        }
         System.out.println(Arrays.toString(array3));
-
         System.out.println();
         System.out.println();
 

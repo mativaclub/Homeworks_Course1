@@ -33,12 +33,13 @@ public class main {
         String fullNameNew1 = "Иванов Семён Семёнович";
         String[] letterChange = fullNameNew1.split(" ");
         System.out.print("Данные ФИО сотрудника — ");
-        for (String letter : letterChange) {
-            if (letter.contains("ё")) {
-                letter = letter.replace('ё', 'е');
+        for (int i = 0; i < letterChange.length; i++) {
+            if (letterChange[i].contains("a")) {
+                letterChange[i] = letterChange[i].replace('ё', 'е');
             }
-            System.out.print(letter + " ");
         }
+        String result1 = String.join(" ", letterChange);
+        System.out.println(result1);
 
         System.out.println("Задание 5");
         String fullName2 = "Ivanov Ivan Ivanovich";
@@ -81,7 +82,7 @@ public class main {
 
         System.out.println("Задание 7");
         String s1 = "135";
-        String s2 = "135";
+        String s2 = "246";
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < s1.length(); i++) {
             sb.append(s1.charAt(i));
